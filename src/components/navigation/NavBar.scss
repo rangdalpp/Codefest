@@ -1,0 +1,95 @@
+*{
+  margin:0;
+  padding: 0;
+  
+}
+
+body, html, #root{
+  height: 100%;
+
+}
+
+#nav-logo{
+  margin: 5px;
+}
+
+a:link, a:visited
+{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#not-nav{
+  color: black;
+}
+
+a:hover{
+  color: gold;
+}
+
+a:active{
+  color: lightblue;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+}
+
+#nav-home-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  max-height: 18vh;
+  width: 100%;
+  background-color: rgb(43, 43, 43);
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links-nav-bar, .user-buttons-nav {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  justify-content: center;
+  align-items: center;
+
+  color: black;
+}
+
+.links-nav-bar{
+  margin-left: 40px;
+}
+
+.user-buttons-nav{
+  margin-right: 40px;
+}
+
+.nav-log-out:hover{
+  cursor: pointer;
+}
+
+.nav-bar-li {
+  margin: 10px 20px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  color: white;
+
+
+  //font-weight: lighter;
+  text-transform: uppercase;
+ 
+  //font-family: 'Abril Fatface', cursive; 
+  font-family: 'Cabin', serif; 
+  //font-family: 'Crete Round', serif;
+  //font-family: 'Bowlby One SC', cursive;
+  //font-family: 'Racing Sans One', cursive;
+}
