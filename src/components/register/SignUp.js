@@ -12,7 +12,11 @@ function SignUp() {
     gender: "",
     email: "",
     phone: "",
-    volunteerType: ""
+    volunteerType: "",
+    sortCode:"",
+    accountNumber:"",
+    paymentFrequency:"",
+    dayOfPayment:""
   })
   const [isError, setIsError] = useState(false)
   const [tabStatus, setTabStatus] = useState([true, false, false, false])
@@ -163,7 +167,6 @@ function SignUp() {
                 />
               </div>
             </div>
-
             <div className="ref-school-address-three">
               <div className="form-field-container">
                 <label htmlFor="typeOfHelp">Type Of Help You Can Provide</label>
@@ -197,13 +200,59 @@ function SignUp() {
                   <option value="ORGANISATION">ORGANISATION</option>
                 </select>
               </div>
-
+              <div className="form-field-container">
+                <label htmlFor="sortCode">Sort Code</label>
+                <input
+                  type="text"
+                  placeholder="SortCode"
+                  className="input home-textinput02"
+                  id="sortCode"
+                  value={form.sortCode}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
             </div>
-
-
-
+            <div className="ref-school-address-three">
+            <div className="form-field-container">
+              <label htmlFor="accountNumber">Account Number</label>
+              <input
+                type="text"
+                placeholder="accountNumber"
+                className="input home-textinput02"
+                id="accountNumber"
+                value={form.accountNumber}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-field-container">
+              <label htmlFor="paymentFrequency">Payment Frequency</label>
+              <input
+                type="text"
+                placeholder="paymentFrequency"
+                className="input home-textinput02"
+                id="paymentFrequency"
+                value={form.paymentFrequency}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-field-container">
+              <label htmlFor="dayOfPayment">Day of Payment</label>
+              <input
+                type="date"
+                placeholder="dayOfPayment"
+                className="input home-textinput02"
+                id="dayOfPayment"
+                value={form.dayOfPayment}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            </div>
+            
           </div>
-
         </div>
 
 
