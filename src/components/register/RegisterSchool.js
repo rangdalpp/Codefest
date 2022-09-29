@@ -4,36 +4,38 @@ import { Link, Navigate } from "react-router-dom"
 
 function RegisterSchool1() {
   const [form, setForm] = useState({
+    userId : "",
+    password : "",
     schoolName: "",
     addressLine1: "",
     addressLine2: "",
     addressLine3: "",
     postCode: "",
-    county: "",
+    country: "",
     city: "",
     schoolEmail: "",
     schoolPhone: "",
     schoolDescription: "",
-    establishedDate: "",
+    estalishedDate: "",
     registrationDate: "",
     countryOfRegistration: "",
     referralId: "",
     childrenCount: "",
     childrenInNeedCount: "",
-    firstContTitle: "",
-    firstContFirstName: "",
-    firstContMiddleName: "",
-    firstContLastName: "",
-    firstContDesignation: "",
-    firstContEmail: "",
-    firstContPhoneNumber: "",
-    secondContTitle: "",
-    secondContFirstName: "",
-    secondContMiddleName: "",
-    secondContLastName: "",
-    secondContDesignation: "",
-    secondContEmail: "",
-    secondContPhoneNumber: "",
+    title1: "",
+    firstName1: "",
+    middleName1: "",
+    lastName1: "",
+    designation1: "",
+    email1: "",
+    phoneNumber1: "",
+    title2: "",
+    firstName2: "",
+    middleName2: "",
+    lastName2: "",
+    designation2: "",
+    email2: "",
+    phoneNumber2: "",
     helpType: ""
   })
   const [isError, setIsError] = useState(false)
@@ -86,6 +88,28 @@ function RegisterSchool1() {
           <div className="register-school-form-page-1">
             <div className="register-school-page-1-top">
               <div className="register-school-page-1-left">
+              <div className="form-field-container">
+                  <label htmlFor="username">UserName</label>
+                  <input
+                    type="text"
+                    id="userId"
+                    placeholder="User Name"
+                    value={form.userId}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="form-field-container">
+                  <label htmlFor="password">Password</label>
+                  <input
+                    type="password"
+                    id="password"
+                    placeholder="Password"
+                    value={form.password}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>  
                 <div className="form-field-container">
                   <label htmlFor="schoolName">School Name</label>
                   <input
@@ -112,9 +136,9 @@ function RegisterSchool1() {
                   <label htmlFor="establishedDate">School Established Date</label>
                   <input
                     type="date"
-                    id="establishedDate"
+                    id="estalishedDate"
                     placeholder="School Established Date"
-                    value={form.establishedDate}
+                    value={form.estalishedDate}
                     onChange={handleChange}
                     required
                   />
@@ -219,13 +243,13 @@ function RegisterSchool1() {
                       />
                     </div>
                     <div className="form-field-container">
-                      <label htmlFor="county">County</label>
+                      <label htmlFor="country">Country</label>
                       <input
                         type="text"
-                        placeholder="County"
+                        placeholder="country"
                         className="input home-textinput02"
-                        id="county"
-                        value={form.county}
+                        id="country"
+                        value={form.country}
                         onChange={handleChange}
                         required
                       />
@@ -283,8 +307,8 @@ function RegisterSchool1() {
                         type="text"
                         placeholder="First Contact Title"
                         className="input home-textinput02"
-                        id="firstContTitle"
-                        value={form.firstContTitle}
+                        id="title1"
+                        value={form.title1}
                         onChange={handleChange}
                         required
                       />
@@ -295,8 +319,8 @@ function RegisterSchool1() {
                         type="text"
                         placeholder="First Contact First Name"
                         className="input home-textinput02"
-                        id="firstContFirstName"
-                        value={form.firstContFirstName}
+                        id="firstName1"
+                        value={form.firstName1}
                         onChange={handleChange}
                         required
                       />
@@ -307,8 +331,8 @@ function RegisterSchool1() {
                         type="text"
                         placeholder="First Contact Middle Name"
                         className="input home-textinput02"
-                        id="firstContMiddleName"
-                        value={form.firstContMiddleName}
+                        id="middleName1"
+                        value={form.middleName1}
                         onChange={handleChange}
                       />
                     </div>
@@ -318,8 +342,8 @@ function RegisterSchool1() {
                         type="text"
                         placeholder="First Contact Last Name"
                         className="input home-textinput02"
-                        id="firstContLastName"
-                        value={form.firstContLastName}
+                        id="lastName1"
+                        value={form.lastName1}
                         onChange={handleChange}
                         required
                       />
@@ -330,8 +354,8 @@ function RegisterSchool1() {
                         type="text"
                         placeholder="First Contact Designation"
                         className="input home-textinput02"
-                        id="designafirstContDesignationtion"
-                        value={form.firstContDesignation}
+                        id="designation1"
+                        value={form.designation1}
                         onChange={handleChange}
                         required
                       />
@@ -342,8 +366,8 @@ function RegisterSchool1() {
                         type="text"
                         placeholder="First Contact Email"
                         className="input home-textinput02"
-                        id="firstContEmail"
-                        value={form.firstContEmail}
+                        id="email1"
+                        value={form.email1}
                         onChange={handleChange}
                         required />
                     </div>
@@ -353,8 +377,8 @@ function RegisterSchool1() {
                         type="phone"
                         placeholder="First Contact Phone Number"
                         className="input home-textinput02"
-                        id="firstContPhoneNumber"
-                        value={form.firstContPhoneNumber}
+                        id="phoneNumber1"
+                        value={form.phoneNumber1}
                         onChange={handleChange}
                         required />
                     </div>
@@ -371,8 +395,8 @@ function RegisterSchool1() {
                         type="text"
                         placeholder="Second Contact  Title"
                         className="input home-textinput02"
-                        id="secondContTitle"
-                        value={form.secondContTitle}
+                        id="title2"
+                        value={form.title2}
                         onChange={handleChange}
                         required
                       />
@@ -383,8 +407,8 @@ function RegisterSchool1() {
                         type="text"
                         placeholder="Second Contact  First Name"
                         className="input home-textinput02"
-                        id="secondContFirstName"
-                        value={form.secondContFirstName}
+                        id="firstName2"
+                        value={form.firstName2}
                         onChange={handleChange}
                         required
                       />
@@ -395,8 +419,8 @@ function RegisterSchool1() {
                         type="text"
                         placeholder="Second Contact  Middle Name"
                         className="input home-textinput02"
-                        id="secondContMiddleName"
-                        value={form.secondContMiddleName}
+                        id="middleName2"
+                        value={form.middleName2}
                         onChange={handleChange}
                       />
                     </div>
@@ -406,8 +430,8 @@ function RegisterSchool1() {
                         type="text"
                         placeholder="Second Contact  Last Name"
                         className="input home-textinput02"
-                        id="secondContLastName"
-                        value={form.secondContLastName}
+                        id="lastName2"
+                        value={form.lastName2}
                         onChange={handleChange}
                         required
                       />
@@ -418,8 +442,8 @@ function RegisterSchool1() {
                         type="text"
                         placeholder="Second Contact  Designation"
                         className="input home-textinput02"
-                        id="secondContDesignation"
-                        value={form.secondContDesignation}
+                        id="designation2"
+                        value={form.designation2}
                         onChange={handleChange}
                         required
                       />
@@ -430,8 +454,8 @@ function RegisterSchool1() {
                         type="text"
                         placeholder="Second Contact  Email"
                         className="input home-textinput02"
-                        id="secondContEmail"
-                        value={form.secondContEmail}
+                        id="email2"
+                        value={form.email2}
                         onChange={handleChange}
                         required />
                     </div>
@@ -441,8 +465,8 @@ function RegisterSchool1() {
                         type="phone"
                         placeholder="Second Contact Phone Number"
                         className="input home-textinput02"
-                        id="secondContPhoneNumber"
-                        value={form.secondContPhoneNumber}
+                        id="phoneNumber2"
+                        value={form.phoneNumber2}
                         onChange={handleChange}
                         required />
                     </div>
