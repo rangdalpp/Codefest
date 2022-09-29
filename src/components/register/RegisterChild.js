@@ -27,7 +27,7 @@ function ReferAChild() {
   function handleSubmit(e) {
     e.preventDefault()
 
-    fetch("https://start-young-app.azurewebsites.net/referSchool", {
+    fetch("https://start-young-app.azurewebsites.net/childRegistration", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -108,9 +108,10 @@ function ReferAChild() {
                 onChange={handleChange}
                 required
               >
-                <option>Male</option>
-                <option>Female</option>
-                <option>Other</option>
+                <option value=""></option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
               </select>
             </div>
             <div className="form-field-container">
@@ -150,10 +151,11 @@ function ReferAChild() {
                 onChange={handleChange}
                 required
               >
-                <option>FINANCIAL</option>
-                <option>UNIFORM</option>
-                <option>PE_KIT</option>
-                <option>Other</option>
+                <option value=""></option>
+                <option value="FINANCIAL">FINANCIAL</option>
+                <option value="UNIFORM">UNIFORM</option>
+                <option  value="PE_KIT">PE_KIT</option>
+                <option value="Other">Other</option>
               </select>
             </div>
             

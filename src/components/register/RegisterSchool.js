@@ -4,8 +4,6 @@ import { Link, Navigate } from "react-router-dom"
 
 function RegisterSchool1() {
   const [form, setForm] = useState({
-    userId: "",
-    password: "",
     schoolName: "",
     addressLine1: "",
     addressLine2: "",
@@ -55,7 +53,7 @@ function RegisterSchool1() {
   function handleSubmit(e) {
     e.preventDefault()
 
-    fetch("https://start-young-app.azurewebsites.net/schoolOnboarding", {
+    fetch("https://start-young-app.azurewebsites.net/registerSchool", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -329,7 +327,7 @@ function RegisterSchool1() {
                     <div className="form-field-container">
                       <label htmlFor="firstContDesignation">Designation</label>
                       <input
-                        type="email"
+                        type="text"
                         placeholder="First Contact Designation"
                         className="input home-textinput02"
                         id="designafirstContDesignationtion"
@@ -417,7 +415,7 @@ function RegisterSchool1() {
                     <div className="form-field-container">
                       <label htmlFor="secondContDesignation">Designation</label>
                       <input
-                        type="email"
+                        type="text"
                         placeholder="Second Contact  Designation"
                         className="input home-textinput02"
                         id="secondContDesignation"
