@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import "./ReferASchool.scss"
 import { Link, Navigate } from "react-router-dom"
+import { Nav } from "react-bootstrap"
 
 function ReferASchool() {
   const [form, setForm] = useState({
@@ -22,6 +23,7 @@ function ReferASchool() {
     phoneNumber:""
   })
   const [isError, setIsError] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
   function handleChange(e) {
     console.log(e.target.id)
@@ -46,7 +48,7 @@ function ReferASchool() {
         if (!res.ok) {
           throw new Error()
         }
-        return res.json()
+        setIsSubmitted(true)
       })
       .then((data) => {
         // data.referalId
@@ -61,7 +63,7 @@ function ReferASchool() {
     <div className="form-container">
       <h1 id="login-heading">Refer A School</h1>
       <div className="divider"></div>
-      <form className="refer-form" onSubmit={handleSubmit}>
+      {!isSubmitted ? <form className="refer-form" onSubmit={handleSubmit}> 
 
         <div className="refer-form-container">
 
@@ -282,6 +284,13 @@ function ReferASchool() {
         {isError && <p className="error">Form Submission failed</p>}
         <button type="submit" id="refer-submit" className="submit-button">Submit</button>
       </form >
+      :
+      <>
+      <div className="form-submission-complete">
+        <h1>Form Submitted Succesfully</h1>
+      </div>
+      </>
+      }
     </div >
   )
 }

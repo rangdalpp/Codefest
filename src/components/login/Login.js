@@ -2,7 +2,7 @@ import {useState, useEffect} from "react"
 import "./Login.scss"
 import { Link, Navigate } from "react-router-dom"
 
-function Login({ loggedIn, setLoggedIn, loginId, setLoginId }) {
+function Login({ loggedIn, setLoggedIn, loginId, setLoginId, userType, setUserType }) {
   const [form, setForm] =useState({
     userId: "",
     password: "",
@@ -40,8 +40,9 @@ function Login({ loggedIn, setLoggedIn, loginId, setLoginId }) {
         localStorage.setItem("start-young-loginId", data.userId)
         localStorage.setItem("start-young-userType", data.userType)
 
-        //setLoginId(data.userId)
-        //setLoggedIn(true)
+        setLoginId(data.userId)
+        setUserType(data.userType)
+        setLoggedIn(true)
       })
       .catch((err) => {
         console.error("LOGIN FETCH ERROR", err)

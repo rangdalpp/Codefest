@@ -4,8 +4,6 @@ import { Link, Navigate } from "react-router-dom"
 
 function RegisterSchool1() {
   const [form, setForm] = useState({
-    userId : "",
-    password : "",
     schoolName: "",
     addressLine1: "",
     addressLine2: "",
@@ -88,28 +86,6 @@ function RegisterSchool1() {
           <div className="register-school-form-page-1">
             <div className="register-school-page-1-top">
               <div className="register-school-page-1-left">
-              <div className="form-field-container">
-                  <label htmlFor="username">UserName</label>
-                  <input
-                    type="text"
-                    id="userId"
-                    placeholder="User Name"
-                    value={form.userId}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="form-field-container">
-                  <label htmlFor="password">Password</label>
-                  <input
-                    type="password"
-                    id="password"
-                    placeholder="Password"
-                    value={form.password}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>  
                 <div className="form-field-container">
                   <label htmlFor="schoolName">School Name</label>
                   <input

@@ -1,8 +1,16 @@
 import React from "react"
-import { Link, Redirect } from "react-router-dom"
+import { Link, Navigate } from "react-router-dom"
 import "./NavBar.scss"
 
-function NavBar() {
+function NavBar({loggedIn, setLoggedIn}) {
+  function handleLogout() {
+
+    localStorage.removeItem("start-young-loginId")
+    localStorage.removeItem("start-young-userType")
+    setLoggedIn(false)
+    window.location.reload()
+
+  }
 
   return (
     <div className="nav-container">
@@ -14,11 +22,18 @@ function NavBar() {
         </nav>
 
         <nav className="user-buttons-nav">
+          {!loggedIn ? <>
             <li className="user-not-logged-in nav-bar-li"><Link to="/login">Log In</Link></li>
-            <li className="user-not-logged-in nav-bar-li"><Link to="/register">Register</Link></li>
+            <li className="user-not-logged-in nav-bar-li"><Link to="/register-a-school">Register</Link></li>
+          </>
+          :
+          <li className="user-logged-in nav-bar-li nav-log-out" onClick={handleLogout}>Log Out</li>
+          }
+            
         </nav>
       </div>
     </div>
+    
   )
 }
 
