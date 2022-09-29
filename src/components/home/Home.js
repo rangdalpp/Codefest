@@ -27,6 +27,7 @@ const Home = () => {
           <button id="home-school-registration" className="home-button"><Link to="/register-a-school">School Registration </Link></button>
           <button id="home-sign-up" className="home-button"><Link to="/sign-up">Sponsor & Buddy Sign-up</Link></button>
           <button id="home-child-registration" className="home-button"><Link to="/register-a-child">Child Registration </Link></button>
+          <button id="home-charity-admin" className="home-button"><Link to="/charity-admin">Charity Admin</Link></button>
         </article>
     </div>
   </>
