@@ -6,6 +6,8 @@ import Login from './components/login/Login.js';
 import ReferASchool from './components/register/ReferASchool';
 import RegisterSchool from './components/register/RegisterSchool';
 import SignUp from './components/register/SignUp';
+import RegisterChild from './components/register/RegisterChild';
+
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
         <Route exact path="/refer-a-school" element={<ReferASchool/>}></Route>
         <Route exact path="/register-a-school" element={<RegisterSchool/>}></Route>
         <Route exact path="/sign-up" element={<SignUp/>}></Route>
+        <Route exact path="/register-a-child" element={<RegisterChild/>}></Route>
       </Routes>
     </BrowserRouter>
     </div>

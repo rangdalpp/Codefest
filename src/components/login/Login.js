@@ -4,7 +4,7 @@ import { Link, Navigate } from "react-router-dom"
 
 function Login({ loggedIn, setLoggedIn, loginId, setLoginId }) {
   const [form, setForm] =useState({
-    loginId: "",
+    userId: "",
     password: "",
     userType: ""
   })
@@ -24,6 +24,8 @@ function Login({ loggedIn, setLoggedIn, loginId, setLoginId }) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin" :"*",
+        "Access-Control-Allow-Methods" : "GET,PUT,POST,DELETE"
       },
       body: JSON.stringify(form),
     })
@@ -35,11 +37,11 @@ function Login({ loggedIn, setLoggedIn, loginId, setLoginId }) {
       })
       .then((data) => {
 
-        localStorage.setItem("start-young-loginId", data.loginId)
+        localStorage.setItem("start-young-loginId", data.userId)
         localStorage.setItem("start-young-userType", data.userType)
 
-        setLoginId(data.loginId)
-        setLoggedIn(true)
+        //setLoginId(data.userId)
+        //setLoggedIn(true)
       })
       .catch((err) => {
         console.error("LOGIN FETCH ERROR", err)
@@ -56,9 +58,9 @@ function Login({ loggedIn, setLoggedIn, loginId, setLoginId }) {
           <label htmlFor="loginId">Login Id</label>
           <input
             type="text"
-            id="loginId"
+            id="userId"
             placeholder="Login Id"
-            value={form.loginId}
+            value={form.userId}
             onChange={handleChange}
             required
           />
@@ -87,7 +89,7 @@ function Login({ loggedIn, setLoggedIn, loginId, setLoginId }) {
             required
           >
             <option>School</option>
-            <option>Charity Admin</option>
+            <option>Admin</option>
           </select>
         </div>
         <div className="form-field-container">

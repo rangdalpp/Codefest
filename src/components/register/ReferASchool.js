@@ -9,7 +9,7 @@ function ReferASchool() {
     addressLine2: "",
     addressLine3: "",
     postCode: "",
-    county: "",
+    country: "",
     city: "",
     schoolEmail: "",
     schoolPhone: "",
@@ -158,13 +158,13 @@ function ReferASchool() {
                   />
                 </div>
                 <div className="form-field-container">
-                  <label htmlFor="county">County</label>
+                  <label htmlFor="County">Country</label>
                   <input
                     type="text"
-                    placeholder="County"
+                    placeholder="Country"
                     className="input home-textinput02"
-                    id="county"
-                    value={form.county}
+                    id="country"
+                    value={form.country}
                     onChange={handleChange}
                     required
                   />
@@ -240,7 +240,7 @@ function ReferASchool() {
                 <div className="form-field-container">
                   <label htmlFor="designation">Designation</label>
                   <input
-                    type="email"
+                    type="text"
                     placeholder="Referrer Designation"
                     className="input home-textinput02"
                     id="designation"
