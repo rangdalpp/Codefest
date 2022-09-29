@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react"
-import "./RegisterSchool.scss"
+import "./SignUp.scss"
 import { Link, Navigate } from "react-router-dom"
 
 function SignUp() {
@@ -30,7 +30,7 @@ function SignUp() {
   function handleSubmit(e) {
     e.preventDefault()
 
-    fetch("", {
+    fetch("https://start-young-app.azurewebsites.net/registration", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

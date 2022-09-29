@@ -20,7 +20,7 @@ function Login({ loggedIn, setLoggedIn, loginId, setLoginId }) {
   function handleSubmit(e) {
     e.preventDefault()
 
-    fetch("", {
+    fetch("https://start-young-app.azurewebsites.net/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -35,9 +35,8 @@ function Login({ loggedIn, setLoggedIn, loginId, setLoginId }) {
       })
       .then((data) => {
 
-        console.log("LOGIN FORM SUBMIT POST", data)
-        localStorage.setItem("accessToken", data.accessToken)
         localStorage.setItem("start-young-loginId", data.loginId)
+        localStorage.setItem("start-young-userType", data.userType)
 
         setLoginId(data.loginId)
         setLoggedIn(true)
@@ -53,40 +52,47 @@ function Login({ loggedIn, setLoggedIn, loginId, setLoginId }) {
       <h1 id="login-heading">Log In</h1>
       <div className="divider"></div>
       <form className="form" onSubmit={handleSubmit}>
-        <label htmlFor="Login Id">Login Id</label>
-        <input
-          type="text"
-          id="loginId"
-          placeholder="loginId"
-          value={form.loginId}
-          onChange={handleChange}
-          required
-        />
-
-        <label htmlFor="password">
+        <div className="form-field-container">
+          <label htmlFor="loginId">Login Id</label>
+          <input
+            type="text"
+            id="loginId"
+            placeholder="Login Id"
+            value={form.loginId}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-field-container">
+          <label htmlFor="password">
           Password  </label>
-        <input
-          type="password"
-          id="password"
-          placeholder="Password"
-          value={form.password}
-          onChange={handleChange}
-          required
-        />
-
-        <label htmlFor="userSelect">
-          User Type  </label>
-        <select
-          type="userType"
-          id="userType"
-          placeholder="User Type"
-          value={form.userType ? form.userType : ""}
-          onChange={handleChange}
-          required
-        >
-        <option>School</option>
-        <option>Charity Admin</option>
-        </select>
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            value={form.password}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-field-container">
+          <label htmlFor="userSelect">
+            User Type  </label>
+          <select
+            type="userType"
+            id="userType"
+            placeholder="User Type"
+            value={form.userType ? form.userType : ""}
+            onChange={handleChange}
+            required
+          >
+            <option>School</option>
+            <option>Charity Admin</option>
+          </select>
+        </div>
+        <div className="form-field-container">
+          
+        </div>
 
         {isError && <p className="error">Login failed</p>}
         <button type="submit" className="submit-button">Submit</button>
