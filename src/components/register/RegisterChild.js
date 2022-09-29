@@ -111,6 +111,8 @@ function ReferAChild() {
                 <option value=""></option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
+                <option value="transgender">TransGender</option>
+                <option value=" thirdgender">ThirdGender</option>
                 <option value="Other">Other</option>
               </select>
             </div>
